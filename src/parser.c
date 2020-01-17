@@ -253,15 +253,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '\\') ADVANCE(24);
       if (lookahead == ']') ADVANCE(52);
       if (lookahead != 0 &&
-          lookahead != '\t' &&
-          lookahead != '\n' &&
-          lookahead != '\r' &&
-          (lookahead < ' ' || '#' < lookahead) &&
-          (lookahead < '%' || '/' < lookahead) &&
-          (lookahead < ':' || '@' < lookahead) &&
-          (lookahead < '[' || '^' < lookahead) &&
+          lookahead != '"' &&
+          lookahead != '\'' &&
+          (lookahead < ';' || '>' < lookahead) &&
+          lookahead != '[' &&
           lookahead != '`' &&
-          (lookahead < '{' || '~' < lookahead) &&
+          (lookahead < '{' || '}' < lookahead) &&
           lookahead != 160 &&
           lookahead != 8203 &&
           lookahead != 8288 &&
@@ -396,11 +393,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 8288 ||
           lookahead == 65279) SKIP(38)
       if (lookahead != 0 &&
-          (lookahead < '!' || '#' < lookahead) &&
-          (lookahead < '%' || '@' < lookahead) &&
-          (lookahead < '[' || '^' < lookahead) &&
+          lookahead != '"' &&
+          lookahead != '\'' &&
+          (lookahead < '0' || '9' < lookahead) &&
+          (lookahead < ';' || '>' < lookahead) &&
+          (lookahead < '[' || ']' < lookahead) &&
           lookahead != '`' &&
-          (lookahead < '{' || '~' < lookahead)) ADVANCE(49);
+          (lookahead < '{' || '}' < lookahead)) ADVANCE(49);
       END_STATE();
     case 39:
       ACCEPT_TOKEN(ts_builtin_sym_end);
@@ -439,12 +438,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\t' &&
           lookahead != '\n' &&
           lookahead != '\r' &&
-          (lookahead < ' ' || '#' < lookahead) &&
-          (lookahead < '%' || '/' < lookahead) &&
-          (lookahead < ':' || '@' < lookahead) &&
-          (lookahead < '[' || '^' < lookahead) &&
+          lookahead != ' ' &&
+          lookahead != '"' &&
+          lookahead != '\'' &&
+          (lookahead < ';' || '>' < lookahead) &&
+          (lookahead < '[' || ']' < lookahead) &&
           lookahead != '`' &&
-          (lookahead < '{' || '~' < lookahead) &&
+          (lookahead < '{' || '}' < lookahead) &&
           lookahead != 160 &&
           lookahead != 8203 &&
           lookahead != 8288 &&
