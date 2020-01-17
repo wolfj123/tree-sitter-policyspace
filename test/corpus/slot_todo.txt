@@ -52,6 +52,27 @@ myslot : TODO. <-- this is comment 2
 
 
 
+====================================
+basic TODO slot with multi-line comments
+====================================
+
+myslot : TODO.  <* this is a 
+* multi line 
+* comment
+*>
+
+<* this is also
+* multi line 
+* comment *>
+
+---
+(source_file 
+    (slot 
+        (identifier_simple)
+        (todo_value)) 
+        (comment))
+
+
 
 ====================================
 basic TODO slot with description
