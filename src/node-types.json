@@ -53,11 +53,6 @@
     }
   },
   {
-    "type": "description",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "identifier_with_desc",
     "named": true,
     "fields": {},
@@ -148,16 +143,12 @@
     "named": false
   },
   {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "]",
-    "named": false
-  },
-  {
     "type": "consists",
     "named": false
+  },
+  {
+    "type": "description",
+    "named": true
   },
   {
     "type": "identifier_simple",

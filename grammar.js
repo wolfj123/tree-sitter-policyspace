@@ -82,13 +82,13 @@ module.exports = grammar({
         $.description
       ),
 
-      description: $ => seq(
-        '[',
-        token(repeat(
-          alpha_numeric
-        )),
-        ']'
-      ),
+      // description: $ => seq(
+      //   '[',
+      //   token(repeat(
+      //     alpha_numeric
+      //   )),
+      //   ']'
+      // ),
 
       comment: $ => token(prec(PREC.COMMENT, choice(
         seq('<--', /.*/),
@@ -97,6 +97,15 @@ module.exports = grammar({
           /[^*]*\*+([^/*][^*]*\*+)*/,
           '>'
         )
+      ))),
+
+      description: $ => token(prec(PREC.STRING, choice(
+        seq('[', /.*/, ']'), //one line description
+        seq(
+          '[',
+          /[^*]*\*+([^/*][^*]*\*+)*/,
+          ']'
+        ) //multi line description
       ))),
           
     },

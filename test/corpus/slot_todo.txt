@@ -62,7 +62,9 @@ myslot [myslot] : TODO.
 
 ---
 (source_file
-    (slot 
-        ((identifier_simple) (description))
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description))
         (todo_value)))
 
