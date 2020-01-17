@@ -13,9 +13,10 @@ myslot : TODO.
 
 
 
-==================
+
+====================================
 basic TODO slot with line comment
-==================
+====================================
 
 
 myslot : TODO. <-- this is a comment
@@ -29,9 +30,10 @@ myslot : TODO. <-- this is a comment
 
 
 
-==================
+
+====================================
 basic TODO slot with more line comments
-==================
+====================================
 
 <-- this is comment 1
 
@@ -48,4 +50,19 @@ myslot : TODO. <-- this is comment 2
         (comment) (comment))
 
 
+
+
+
+====================================
+basic TODO slot with description
+====================================
+
+myslot [myslot] : TODO. 
+
+
+---
+(source_file
+    (slot 
+        ((identifier_simple) (description))
+        (todo_value)))
 

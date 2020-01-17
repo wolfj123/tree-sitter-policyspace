@@ -69,8 +69,8 @@ module.exports = grammar({
       ),
 
       _identifier: $ => choice(
-        $.identifier_simple,
-        $.identifier_with_desc
+        $.identifier_with_desc,
+        $.identifier_simple
       ),
 
       identifier_simple: $ => {

@@ -168,11 +168,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier_simple"
+          "name": "identifier_with_desc"
         },
         {
           "type": "SYMBOL",
-          "name": "identifier_with_desc"
+          "name": "identifier_simple"
         }
       ]
     },
