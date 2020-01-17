@@ -1,0 +1,182 @@
+[
+  {
+    "type": "aggregate_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier_simple",
+          "named": true
+        },
+        {
+          "type": "identifier_with_desc",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "atomic_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier_simple",
+          "named": true
+        },
+        {
+          "type": "identifier_with_desc",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compound_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier_simple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "description",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier_with_desc",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "description",
+          "named": true
+        },
+        {
+          "type": "identifier_simple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "slot",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "aggregate_values",
+          "named": true
+        },
+        {
+          "type": "atomic_values",
+          "named": true
+        },
+        {
+          "type": "compound_values",
+          "named": true
+        },
+        {
+          "type": "identifier_simple",
+          "named": true
+        },
+        {
+          "type": "identifier_with_desc",
+          "named": true
+        },
+        {
+          "type": "todo_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "slot",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "todo_value",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "TODO",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "consists",
+    "named": false
+  },
+  {
+    "type": "identifier_simple",
+    "named": true
+  },
+  {
+    "type": "of",
+    "named": false
+  },
+  {
+    "type": "one",
+    "named": false
+  },
+  {
+    "type": "some",
+    "named": false
+  },
+  {
+    "type": "todo",
+    "named": false
+  }
+]
