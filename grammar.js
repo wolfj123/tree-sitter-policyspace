@@ -1,10 +1,11 @@
-//const alpha = /[^\s0-9:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-//const alpha_numeric = /[^\s:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+const alpha = /[^\s0-9:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+const alpha_numeric = /[^\s:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 
 //.,/~?!()@:#$%^&*_+-
 
-const alpha = /[^\s0-9;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-const alpha_numeric = /[^\s;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+//const alpha = /[^\s0-9;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+//const alpha_numeric = /[^\s;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+//const newline = /[\n]|[\n\r]/
 
 const PREC = {
   COMMENT: 1, // Prefer comments over regexes
@@ -69,8 +70,9 @@ module.exports = grammar({
       ),
 
       _identifier: $ => choice(
-        $.identifier_with_desc,
-        $.identifier_simple
+        $.identifier_simple,
+        $.identifier_with_desc
+        //,$.identifier_simple
       ),
 
       identifier_simple: $ => {
@@ -90,6 +92,7 @@ module.exports = grammar({
       //   ']'
       // ),
 
+      //https://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment
       comment: $ => token(prec(PREC.COMMENT, choice(
         seq('<--', /.*/),
         seq(
@@ -99,14 +102,15 @@ module.exports = grammar({
         )
       ))),
 
-      description: $ => token(prec(PREC.STRING, choice(
-        seq('[', /.*/, ']'), //one line description
-        seq(
-          '[',
-          /[^*]*\*+([^/*][^*]*\*+)*/,
-          ']'
-        ) //multi line description
-      ))),
+      description: $ => token(prec(PREC.STRING, //choice(
+        seq('[', repeat(alpha_numeric), ']'), //one line description
+        // seq(
+        //   '[',
+        //   repeat(choice(alpha_numeric, newline)),
+        //   ']'
+        // ) //multi line description
+        //)
+      )),
           
     },
 

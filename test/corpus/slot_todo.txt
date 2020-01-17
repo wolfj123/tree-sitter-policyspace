@@ -75,10 +75,30 @@ myslot : TODO.  <* this is a
 
 
 ====================================
-basic TODO slot with description
+basic TODO slot with single line description
 ====================================
 
 myslot [myslot] : TODO. 
+
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description))
+        (todo_value)))
+
+
+
+        
+
+====================================
+basic TODO slot with multi line description
+====================================
+
+myslot [line1
+line 2] : TODO. 
 
 
 ---
