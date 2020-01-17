@@ -1,0 +1,75 @@
+==================
+basic aggregate slot
+==================
+
+myslot : some of something .
+
+---
+(source_file
+    (slot
+        (identifier_simple)
+        (aggregate_values 
+            (identifier_simple))))
+
+
+
+
+====================================
+basic aggregate slot with descriptions
+====================================
+
+myslot[descriptions1] : some of something [description2].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (aggregate_values 
+            (identifier_with_desc 
+                (identifier_simple) (description)))))
+
+
+
+====================================
+aggregate slot with descriptions
+====================================
+
+myslot[descriptions1] : some of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (aggregate_values 
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description)))))
+
+
+
+
+===========================================
+aggregate slot with descriptions and comment
+===========================================
+
+myslot[descriptions1] : some of something [descrip
+            tion2], <* a wild [comment] appears!*> somethingElse [else thingy!], evenMoreSomething [much else?].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (aggregate_values 
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (comment)
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description)))))

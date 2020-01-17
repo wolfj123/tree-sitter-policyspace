@@ -19,9 +19,9 @@
 
 
 
-const alpha = /[^\s0-9;`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-const alpha_numeric = /[^\s;`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-const alpha_numeric_whitespace = /[^;`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+const alpha = /[^\s0-9;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+const alpha_numeric = /[^\s;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
+const string_regex = /[^;`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 
 
 const PREC = {
@@ -122,7 +122,7 @@ module.exports = grammar({
       ))),
 
       description: $ => token(prec(PREC.STRING, //choice(
-        seq('[', repeat(alpha_numeric_whitespace), ']'), //one line description
+        seq('[', repeat(string_regex), ']'), //one line description
         // seq(
         //   '[',
         //   repeat(choice(alpha_numeric, newline)),

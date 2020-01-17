@@ -1,0 +1,75 @@
+==================
+basic atomic slot
+==================
+
+myslot : one of something .
+
+---
+(source_file
+    (slot
+        (identifier_simple)
+        (atomic_values 
+            (identifier_simple))))
+
+
+
+
+====================================
+basic atomic slot with descriptions
+====================================
+
+myslot[descriptions1] : one of something [description2].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (atomic_values 
+            (identifier_with_desc 
+                (identifier_simple) (description)))))
+
+
+
+====================================
+atomic slot with descriptions
+====================================
+
+myslot[descriptions1] : one of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (atomic_values 
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description)))))
+
+
+
+
+===========================================
+atomic slot with descriptions and comment
+===========================================
+
+myslot[descriptions1] : one of something [descrip
+            tion2], <* a wild [comment] appears!*> somethingElse [else thingy!], evenMoreSomething [much else?].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (atomic_values 
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (comment)
+            (identifier_with_desc 
+                (identifier_simple) (description))
+            (identifier_with_desc 
+                (identifier_simple) (description)))))
