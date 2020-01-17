@@ -1,23 +1,3 @@
-//const alpha = /[^\s0-9:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-//const alpha_numeric = /[^\s:;`"'@#.,|^&<=>+\-*/\\%?!~()\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-
-
-
-//.,/~?!()@:#$%^&*_+-
-
-//const alpha = /[^\s0-9;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-//const alpha_numeric = /[^\s;`"'@#.,|^&<=>+\-*/\\%?!~(){}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-//const newline = /[\n]|[\n\r]/
-
-
-// const identifier_punctuation = /[\.,\/~\?!\(\)@:#\$%\^&\*_\+-]/
-// const alpha = /[0-9a-zA-Z]/
-// const alpha_numeric = /[0-9a-zA-Z]/
-// const numeric = /[0-9]/
-// const whitespace = /\s/
-// const description_alpha = /[0-9a-zA-Z]|[\.,\/~\?!\(\)@:#\$%\^&\*_\+-]|[\s]/
-
-
 //  https://regex101.com/r/dU5fO8/73
 const alpha = /[^\s0-9;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 const alpha_numeric = /[^\s;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
