@@ -8,8 +8,7 @@ myslot : TODO.
 (source_file
     (slot
         (identifier_simple)
-        (todo_value)
-        ))
+        (todo_value)))
 
 
 
