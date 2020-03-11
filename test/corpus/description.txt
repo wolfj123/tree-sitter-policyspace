@@ -47,3 +47,85 @@ myslot ["/#'] : one of aaa .
 
 
 
+
+==================
+illegal chars 1
+==================
+
+myslot : one of A [;].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED ';'))))
+            
+==================
+illegal chars 2
+==================
+
+myslot : one of A [`].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '`'))))
+
+==================
+illegal chars 3
+==================
+
+myslot : one of A [|].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '|'))))
+
+==================
+illegal chars 4
+==================
+
+myslot : one of A [<].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '<'))))
+
+==================
+illegal chars 5
+==================
+
+myslot : one of A [>].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '>'))))
+
+==================
+illegal chars 6
+==================
+
+myslot : one of A [=].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '='))))
+
+==================
+illegal chars 7
+==================
+
+myslot : one of A [<].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '<'))))
+
+
+==================
+illegal chars 8
+==================
+
+myslot : one of A [\\].
+
+---
+(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) 
+(ERROR (UNEXPECTED '\'))))
+
