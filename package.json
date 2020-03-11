@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-policyspace",
   "version": "1.0.0",
-  "description": "",
+  "description": "tree-sitter parser for the policy-space language",
   "main": "index.js",
   "scripts": {
     "compile": "tree-sitter generate",
