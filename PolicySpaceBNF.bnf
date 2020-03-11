@@ -1,8 +1,5 @@
 POLICY SPACE BNF
 
-# TODO
-# not sure what to do with the comments and whitespaces
-
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/index.html
 <policy_space> 			::= <slot>*
 
