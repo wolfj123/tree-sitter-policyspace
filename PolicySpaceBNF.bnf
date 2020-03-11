@@ -32,7 +32,7 @@ POLICY SPACE BNF
 
 <identifier_simple> 	::= <letter> (<letter> | <digit>)*
 	
-<free_text>				::=  (<letter> | <digit> | ".,/~?!()@:#$%^&*_+-")+
+<free_text>				::=  (<letter> | <digit> | ".,/~?!()@:#$%^&*_+-)+\"\'"
 
 <letter> 				::= "a" | "b" | ... | "z" | "A" | ... | "Z"
 

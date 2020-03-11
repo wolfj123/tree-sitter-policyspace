@@ -1,0 +1,49 @@
+==================
+bad comment 1
+==================
+
+myslot [bad comment]] : one of aaa .
+
+---
+(source_file 
+    (slot 
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description)) 
+        (ERROR (UNEXPECTED  ']')) 
+        (atomic_values (identifier_simple))))
+
+
+==================
+special chars
+==================
+
+myslot [.,~?!()@:$%^&*_+-)+] : one of aaa .
+
+---
+(source_file 
+    (slot 
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description)) 
+        (atomic_values 
+            (identifier_simple))))
+
+
+==================
+special chars 2
+==================
+
+myslot ["/#'] : one of aaa .
+
+---
+(source_file 
+    (slot 
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description)) 
+        (atomic_values 
+            (identifier_simple))))
+
+
+

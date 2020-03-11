@@ -253,8 +253,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '\\') ADVANCE(24);
       if (lookahead == ']') ADVANCE(52);
       if (lookahead != 0 &&
-          lookahead != '"' &&
-          lookahead != '\'' &&
           (lookahead < ';' || '>' < lookahead) &&
           lookahead != '[' &&
           lookahead != '`' &&
