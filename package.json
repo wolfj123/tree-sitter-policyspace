@@ -2,6 +2,10 @@
   "name": "tree-sitter-policyspace",
   "version": "1.0.0",
   "description": "tree-sitter parser for the policy-space language",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/wolfj123/tree-sitter-policyspace"
+	},
   "main": "index.js",
   "scripts": {
     "compile": "tree-sitter generate",
