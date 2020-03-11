@@ -1,0 +1,86 @@
+==================
+basic compound slot
+==================
+
+myslot : consists of something .
+
+---
+(source_file
+    (slot
+        (identifier_simple)
+        (compound_values 
+            (identifier_simple))))
+
+====================================
+multiple compound slot with descriptions
+====================================
+
+myslot[descriptions1] : consists of something, somethingElse , evenMoreSomething .
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (compound_values 
+            (identifier_simple)
+            (identifier_simple)
+            (identifier_simple))))
+
+
+====================================
+basic compound slot with descriptions - ERROR
+====================================
+
+myslot[descriptions1] :  consists of something [description2].
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (compound_values 
+            (identifier_simple)) 
+            (ERROR 
+            (description))))
+
+
+
+====================================
+compound slot with descriptions - ERROR
+====================================
+
+myslot[descriptions1] : consists of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
+
+---
+(source_file 
+    (slot 
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description)) 
+        (compound_values 
+            (identifier_simple) 
+            (ERROR (description)) 
+            (identifier_simple) 
+            (ERROR (description)) 
+            (identifier_simple)) 
+        (ERROR (description))))
+
+
+
+===========================================
+compound slot with descriptions and comment
+===========================================
+
+myslot[descriptions1] : consists of something , <* a wild [comment] appears!*> somethingElse , evenMoreSomething.
+
+---
+(source_file
+    (slot
+        (identifier_with_desc 
+            (identifier_simple) (description))
+        (compound_values 
+            (identifier_simple)
+            (comment)
+            (identifier_simple)
+            (identifier_simple))))
