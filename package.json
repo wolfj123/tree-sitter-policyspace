@@ -12,7 +12,7 @@
     "test": "tree-sitter test"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "nan": "^2.14.0"
   },
