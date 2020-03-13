@@ -1,0 +1,46 @@
+==================
+bug1
+==================
+
+Subject [ Who will be greeted ] : some of
+  world [Planet Earth],
+  planet [Any other pla net.],
+  moon,
+  unrecognizedOrbitingObject [Hopefully they're friendly].
+ <*    asdasdda*>
+
+Greeting [ Type of greeting to perform ]: one of
+  ignore [
+    The null greeting ],
+  hi     [ 
+    Acknowledging the other person, but not really stopping for   a chat ],
+  hello    [ 
+    Friendly greeting ], <-- idk i guess this is a comment
+  _hug_  
+<*  
+*  asdasd
+*asdasd
+*
+*asdasd
+*>
+  [Physically hugging the other person ]   . 
+
+---
+(source_file 
+    (slot 
+        (identifier_with_desc 
+            (identifier_simple) 
+            (description)) 
+        (aggregate_values 
+            (identifier_with_desc 
+                (identifier_simple) 
+                (description)) 
+            (identifier_with_desc 
+                (identifier_simple) 
+                (description)) 
+            (identifier_simple) 
+            (identifier_with_desc 
+                (identifier_simple) 
+                (description)))) 
+    (comment) 
+    (ERROR (description))) 

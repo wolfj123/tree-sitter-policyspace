@@ -10,13 +10,10 @@ const PREC = {
 };
 
 
-
-
 module.exports = grammar({
     name: 'policyspace',
   
     rules: {
-      // TODO: add the actual grammar rules
       source_file: $ => repeat($.slot),
 
       slot: $ => seq(
