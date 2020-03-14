@@ -234,6 +234,19 @@
         ]
       }
     },
+    "comment_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<--"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        }
+      ]
+    },
     "description": {
       "type": "TOKEN",
       "content": {

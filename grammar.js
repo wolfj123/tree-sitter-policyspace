@@ -95,6 +95,9 @@ module.exports = grammar({
         // )
       )),
 
+      comment_line: $ => 
+        seq('<--', /.*/),
+
       description: $ => token(prec(PREC.STRING, 
         seq('[', repeat(string_regex), ']'), 
       )),      

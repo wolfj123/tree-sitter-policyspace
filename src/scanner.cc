@@ -36,7 +36,7 @@ extern "C" void tree_sitter_policyspace_external_scanner_deserialize(
 
 static void advance(TSLexer *lexer) { lexer->advance(lexer, false); }
 
-extern "C" bool tree_sitter_policyspace_external_scanner_scan(
+extern "C" bool tree_sitter_policyspace_external_scanner_scan1(
   void *payload,
   TSLexer *lexer,
   const bool *valid_symbols
@@ -56,19 +56,17 @@ extern "C" bool tree_sitter_policyspace_external_scanner_scan(
     return false;
 }
 
-
-
-extern "C" bool tree_sitter_policyspace_external_scanner_scan2(
+extern "C" bool tree_sitter_policyspace_external_scanner_scan(
   void *payload,
   TSLexer *lexer,
   const bool *valid_symbols
 ) {
-    printf("LETS TRY!!!!!!\n");
+    //printf("DEBUG PRINT\n");
     if (valid_symbols[COMMENT_BLOCK]) {
-      //printf("************COMMENT_BLOCK************\n");
-      //printf(lexer->lookahead);
-      //check that the text starts with "<*"
-      printf(" FOUND : %c \n",(char)lexer->lookahead);
+      lexer->result_symbol = COMMENT_BLOCK;
+      while (iswspace(lexer->lookahead)) {
+        advance(lexer);
+      }
       if(lexer->lookahead != '<'){      
         return false;
       }
@@ -84,7 +82,7 @@ extern "C" bool tree_sitter_policyspace_external_scanner_scan2(
         else if(lexer->lookahead == '*'){
           found_star = true;
         } else if(found_star && lexer->lookahead == '>') {
-          lexer->result_symbol = COMMENT_BLOCK;
+          advance(lexer);
           return true;
         }
         else {
