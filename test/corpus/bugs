@@ -26,7 +26,7 @@ multiline comment bug2
   a*>
 
 b : one of c <*
- *> 
+ *> .
 
 ---
 

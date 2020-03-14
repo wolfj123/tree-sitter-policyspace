@@ -147,10 +147,6 @@
     "named": false
   },
   {
-    "type": "comment_block",
-    "named": true
-  },
-  {
     "type": "consists",
     "named": false
   },

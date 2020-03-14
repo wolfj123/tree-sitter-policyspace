@@ -33,28 +33,7 @@ extern "C" void tree_sitter_policyspace_external_scanner_deserialize(
   // noop
 }
 
-
 static void advance(TSLexer *lexer) { lexer->advance(lexer, false); }
-
-extern "C" bool tree_sitter_policyspace_external_scanner_scan1(
-  void *payload,
-  TSLexer *lexer,
-  const bool *valid_symbols
-) {
-    if (valid_symbols[COMMENT_BLOCK]) {
-      lexer->result_symbol = COMMENT_BLOCK;
-      while (iswspace(lexer->lookahead)) {
-        advance(lexer);
-      }
-
-      if(lexer->lookahead == '}'){
-        advance(lexer);
-        return true;
-      }
-      return false;
-    }
-    return false;
-}
 
 extern "C" bool tree_sitter_policyspace_external_scanner_scan(
   void *payload,

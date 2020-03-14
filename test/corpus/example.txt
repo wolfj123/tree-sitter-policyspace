@@ -8,21 +8,11 @@ myslot : one of value1, value2 .
 (source_file (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple))))
 
 ==================
-playground2
+playground
 ==================
 
 <* *>
 
 ---
 
-(comment)
-
-==================
-playground1
-==================
-
-}
-
----
-
-(comment)
+(source_file (comment))

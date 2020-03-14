@@ -229,7 +229,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "comment_block"
+            "name": "_comment_block"
           }
         ]
       }
@@ -289,7 +289,7 @@
   "externals": [
     {
       "type": "SYMBOL",
-      "name": "comment_block"
+      "name": "_comment_block"
     }
   ],
   "inline": [],

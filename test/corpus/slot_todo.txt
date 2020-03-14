@@ -69,6 +69,7 @@ myslot : TODO.  <* this is a
     (slot 
         (identifier_simple)
         (todo_value)) 
+        (comment)
         (comment))
 
 

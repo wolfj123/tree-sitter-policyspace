@@ -18,8 +18,6 @@ module.exports = grammar({
       /[\s\uFEFF\u2060\u200B\u00A0]/
     ],
 
-
-
     rules: {
       source_file: $ => repeat($.slot),
 
@@ -87,12 +85,8 @@ module.exports = grammar({
       //https://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment
       //comment: $ => token(prec(PREC.COMMENT, choice(
       comment: $ => prec(PREC.COMMENT, choice(
-        seq('<--', /.*/), $.comment_block
-        // seq(
-        //   '<*',
-        //   /[^*]*\*+([^/*][^*]*\*+)*/,
-        //   '>'
-        // )
+        seq('<--', /.*/), 
+        $._comment_block
       )),
 
       comment_line: $ => 
@@ -104,7 +98,7 @@ module.exports = grammar({
     },
 
     externals: $ => [
-      $.comment_block
+      $._comment_block
     ]
   
   });
