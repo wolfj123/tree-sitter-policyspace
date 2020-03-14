@@ -1,5 +1,6 @@
 #include <tree_sitter/parser.h>
 #include <stdio.h>
+#include <wctype.h>
 
 enum TokenType {
   COMMENT_BLOCK
@@ -40,22 +41,19 @@ extern "C" bool tree_sitter_policyspace_external_scanner_scan(
   TSLexer *lexer,
   const bool *valid_symbols
 ) {
-    advance(lexer);
-    lexer->result_symbol = COMMENT_BLOCK;
+    if (valid_symbols[COMMENT_BLOCK]) {
+      lexer->result_symbol = COMMENT_BLOCK;
+      while (iswspace(lexer->lookahead)) {
+        advance(lexer);
+      }
 
-     if(lexer->lookahead == '}'){
-       //advance(lexer);
+      if(lexer->lookahead == '}'){
         advance(lexer);
         return true;
-     } else {
-       advance(lexer);
-        if(lexer->lookahead == '}'){
-        //advance(lexer); 
-        advance(lexer);
-          return true;
-        }
-     }
-     return false;
+      }
+      return false;
+    }
+    return false;
 }
 
 
