@@ -3,9 +3,9 @@
 multiline comment bug1
 ==================
 
- <*    asdasdda*>
+ <* aaaaa *>
 
-Greeting : one of hi <* *> . 
+b : one of c <* *> . 
 
 ---
 
@@ -37,3 +37,21 @@ b : one of c <*
 		(atomic_values 
 			(identifier_simple)) 
 		(comment)))
+
+
+====================================
+aggregate slot with descriptions bug1
+====================================
+
+myslot[descriptions1] : some of somethingElse [else thingy].
+
+---
+(source_file 
+	(slot 
+		(identifier_with_desc 
+			(identifier_simple) 
+			(description)) 
+		(aggregate_values 
+			(identifier_with_desc 
+				(identifier_simple) 
+				(description)))))

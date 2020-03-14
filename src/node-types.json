@@ -139,8 +139,16 @@
     "named": false
   },
   {
+    "type": "<--",
+    "named": false
+  },
+  {
     "type": "TODO",
     "named": false
+  },
+  {
+    "type": "comment_block",
+    "named": true
   },
   {
     "type": "consists",

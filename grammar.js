@@ -2,7 +2,7 @@
 const alpha = /[^\s0-9;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 const alpha_numeric = /[^\s;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 const string_regex = /[^;`|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-const comment_block = /<\*(.|\n)*\*>/
+//const comment_block = /<\*(.|\n)*\*>/
 
 const PREC = {
   COMMENT: 1, // Prefer comments over regexes
@@ -12,7 +12,14 @@ const PREC = {
 
 module.exports = grammar({
     name: 'policyspace',
-  
+
+    extras: $ => [
+      $.comment,
+      /[\s\uFEFF\u2060\u200B\u00A0]/
+    ],
+
+
+
     rules: {
       source_file: $ => repeat($.slot),
 
@@ -77,38 +84,24 @@ module.exports = grammar({
         $.description
       ),
 
-      // description: $ => seq(
-      //   '[',
-      //   token(repeat(
-      //     alpha_numeric
-      //   )),
-      //   ']'
-      // ),
-
       //https://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment
-      comment: $ => token(prec(PREC.COMMENT, choice(
-        seq('<--', /.*/),
-        seq(
-          '<*',
-          /[^*]*\*+([^/*][^*]*\*+)*/,
-          '>'
-        )
-      ))),
-
-      description: $ => token(prec(PREC.STRING, //choice(
-        seq('[', repeat(string_regex), ']'), //one line description
+      //comment: $ => token(prec(PREC.COMMENT, choice(
+      comment: $ => prec(PREC.COMMENT, choice(
+        seq('<--', /.*/), $.comment_block
         // seq(
-        //   '[',
-        //   repeat(choice(alpha_numeric, newline)),
-        //   ']'
-        // ) //multi line description
-        //)
+        //   '<*',
+        //   /[^*]*\*+([^/*][^*]*\*+)*/,
+        //   '>'
+        // )
       )),
-          
+
+      description: $ => token(prec(PREC.STRING, 
+        seq('[', repeat(string_regex), ']'), 
+      )),      
     },
 
-    extras: $ => [
-      $.comment,
-      /[\s\uFEFF\u2060\u200B\u00A0]/
-    ],
+    externals: $ => [
+      $.comment_block
+    ]
+  
   });
