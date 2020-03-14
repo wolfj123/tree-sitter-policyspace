@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "tree-sitter parser for the policy-space language",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/wolfj123/tree-sitter-policyspace"
-	},
+    "type": "git",
+    "url": "https://github.com/wolfj123/tree-sitter-policyspace"
+  },
   "main": "index.js",
   "scripts": {
     "compile": "tree-sitter generate",
@@ -17,6 +17,6 @@
     "nan": "^2.14.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.16.3"
+    "tree-sitter-cli": "^0.16.5"
   }
 }

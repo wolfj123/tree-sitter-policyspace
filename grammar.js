@@ -2,7 +2,7 @@
 const alpha = /[^\s0-9;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 const alpha_numeric = /[^\s;.,`"'|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
 const string_regex = /[^;`|<=>\\\[\]{}\uFEFF\u2060\u200B\u00A0]|\\u[0-9a-fA-F]{4}|\\u\{[0-9a-fA-F]+\}/
-
+const comment_block = /<\*(.|\n)*\*>/
 
 const PREC = {
   COMMENT: 1, // Prefer comments over regexes
@@ -66,13 +66,10 @@ module.exports = grammar({
       _identifier: $ => choice(
         $.identifier_simple,
         $.identifier_with_desc
-        //,$.identifier_simple
       ),
 
       identifier_simple: $ => {
         return token(seq(alpha, repeat(alpha_numeric)))
-        //return token(seq(alpha, repeat(choice(alpha_numeric, identifier_punctuation))))
-        //return token(seq(repeat(alpha)))
       },
 
       identifier_with_desc: $ => seq(
