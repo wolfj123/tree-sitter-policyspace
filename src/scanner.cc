@@ -69,6 +69,7 @@ extern "C" bool tree_sitter_policyspace_external_scanner_scan(
         }
         advance(lexer);
       }
+      return false;
+    }
     return false;
-  }
 }
