@@ -14,7 +14,7 @@ extern "C" void tree_sitter_policyspace_external_scanner_destroy(void *payload) 
   //noop
 }
 
-void tree_sitter_javascript_external_scanner_reset(void *p) {
+void tree_sitter_policyspace_external_scanner_reset(void *p) {
   //noop
 }
 
