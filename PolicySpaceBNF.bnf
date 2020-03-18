@@ -19,7 +19,7 @@ POLICY SPACE BNF
 <compound_values> 		::= "consists" "of" <identifier_simple> ("," <identifier_simple>)*
 
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/todo-slot.html
-<todo_value>			::= "TODO" | "todo"
+<todo_value>			::= "TODO"
 									
 <description> 			::= "[" (<free_text> | <newline>)* "]"
 
