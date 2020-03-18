@@ -11,7 +11,7 @@
     "compile": "tree-sitter generate",
     "test": "tree-sitter test"
   },
-  "author": "",
+  "author": "Jonathan Wolf",
   "license": "MIT",
   "dependencies": {
     "nan": "^2.14.0"
