@@ -40,6 +40,6 @@ myslot[descriptions1] : some of something somethingElse.
             (description)) 
         (aggregate_values 
             (identifier_simple)) 
-        (ERROR (UNEXPECTED 'h'))))
+        (ERROR (UNEXPECTED 't'))))
 
 

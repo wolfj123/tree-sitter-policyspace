@@ -122,11 +122,6 @@
     }
   },
   {
-    "type": "todo_value",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": ",",
     "named": false
   },
@@ -140,10 +135,6 @@
   },
   {
     "type": "<--",
-    "named": false
-  },
-  {
-    "type": "TODO",
     "named": false
   },
   {
@@ -171,7 +162,7 @@
     "named": false
   },
   {
-    "type": "todo",
-    "named": false
+    "type": "todo_value",
+    "named": true
   }
 ]
