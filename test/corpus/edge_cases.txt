@@ -5,4 +5,4 @@ edge case slot name
 my:slot: one of aaa .
 
 ---
-(source_file (slot (identifier_simple) (ERROR (UNEXPECTED 'l')) (atomic_values (identifier_simple))))
+(policyspace (slot (identifier_simple) (ERROR (UNEXPECTED 'l')) (atomic_values (identifier_simple))))

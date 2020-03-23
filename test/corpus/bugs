@@ -9,7 +9,7 @@ b : one of c <* *> .
 
 ---
 
-(source_file 
+(policyspace 
 	(comment) 
 	(slot 
 		(identifier_simple) 
@@ -30,7 +30,7 @@ b : one of c <*
 
 ---
 
-(source_file 
+(policyspace 
 	(comment) 
 	(slot 
 		(identifier_simple) 
@@ -46,7 +46,7 @@ aggregate slot with descriptions bug1
 myslot[descriptions1] : some of somethingElse [else thingy].
 
 ---
-(source_file 
+(policyspace 
 	(slot 
 		(identifier_with_desc 
 			(identifier_simple) 

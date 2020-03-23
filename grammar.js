@@ -18,7 +18,7 @@ module.exports = grammar({
     ],
 
     rules: {
-      source_file: $ => repeat($.slot),
+      policyspace: $ => repeat($.slot),
 
       slot: $ => seq(
         $._identifier,

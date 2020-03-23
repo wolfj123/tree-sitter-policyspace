@@ -72,6 +72,21 @@
     }
   },
   {
+    "type": "policyspace",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "slot",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "slot",
     "named": true,
     "fields": {},
@@ -101,21 +116,6 @@
         },
         {
           "type": "todo_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "source_file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "slot",
           "named": true
         }
       ]

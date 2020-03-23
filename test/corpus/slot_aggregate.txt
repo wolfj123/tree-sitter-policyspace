@@ -5,7 +5,7 @@ basic aggregate slot
 myslot : some of something .
 
 ---
-(source_file
+(policyspace
     (slot
         (identifier_simple)
         (aggregate_values 
@@ -21,7 +21,7 @@ basic aggregate slot with descriptions
 myslot[descriptions1] : some of something [description2].
 
 ---
-(source_file
+(policyspace
     (slot
         (identifier_with_desc 
             (identifier_simple) (description))
@@ -38,7 +38,7 @@ aggregate slot with descriptions
 myslot[descriptions1] : some of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(source_file
+(policyspace
     (slot
         (identifier_with_desc 
             (identifier_simple) (description))
@@ -61,7 +61,7 @@ myslot[descriptions1] : some of something [descrip
             tion2], <* a wild [comment] appears!*> somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(source_file
+(policyspace
     (slot
         (identifier_with_desc 
             (identifier_simple) (description))

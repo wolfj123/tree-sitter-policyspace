@@ -5,7 +5,7 @@ description instead of slot name
 [myslot] : one of aaa .
 
 ---
-(source_file (ERROR (description) (UNEXPECTED 'a')))
+(policyspace (ERROR (description) (UNEXPECTED 'a')))
 
 ==================
 missing value
@@ -14,7 +14,7 @@ missing value
 myslot : one of .
 
 ---
-(source_file (slot (identifier_simple) (atomic_values (MISSING identifier_simple))))
+(policyspace (slot (identifier_simple) (atomic_values (MISSING identifier_simple))))
 
 ==================
 missing dot
@@ -23,7 +23,7 @@ missing dot
 myslot : one of those
 
 ---
-(source_file (slot (identifier_simple) (atomic_values (identifier_simple)) (MISSING ".")))
+(policyspace (slot (identifier_simple) (atomic_values (identifier_simple)) (MISSING ".")))
 
 
 ====================================
@@ -33,7 +33,7 @@ missing comma
 myslot[descriptions1] : some of something somethingElse.
 
 ---
-(source_file 
+(policyspace 
     (slot 
         (identifier_with_desc 
             (identifier_simple) 

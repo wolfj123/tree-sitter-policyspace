@@ -1,7 +1,7 @@
 {
   "name": "policyspace",
   "rules": {
-    "source_file": {
+    "policyspace": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
