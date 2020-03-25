@@ -21,13 +21,13 @@ module.exports = grammar({
       policyspace: $ => repeat($.slot),
 
       slot: $ => seq(
-        $._identifier,
+        field('name', $._identifier),
         ':',
-        choice(
+        field('values', choice(
           $.atomic_values,
           $.aggregate_values,
           $.compound_values,
-          $.todo_value),
+          $.todo_value)),
         "."
       ),
 

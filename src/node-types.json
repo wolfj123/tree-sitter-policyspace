@@ -89,36 +89,43 @@
   {
     "type": "slot",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "aggregate_values",
-          "named": true
-        },
-        {
-          "type": "atomic_values",
-          "named": true
-        },
-        {
-          "type": "compound_values",
-          "named": true
-        },
-        {
-          "type": "identifier_simple",
-          "named": true
-        },
-        {
-          "type": "identifier_with_desc",
-          "named": true
-        },
-        {
-          "type": "todo_value",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_simple",
+            "named": true
+          },
+          {
+            "type": "identifier_with_desc",
+            "named": true
+          }
+        ]
+      },
+      "values": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "aggregate_values",
+            "named": true
+          },
+          {
+            "type": "atomic_values",
+            "named": true
+          },
+          {
+            "type": "compound_values",
+            "named": true
+          },
+          {
+            "type": "todo_value",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

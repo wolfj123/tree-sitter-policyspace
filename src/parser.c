@@ -12,7 +12,7 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 14
 #define EXTERNAL_TOKEN_COUNT 1
-#define FIELD_COUNT 0
+#define FIELD_COUNT 2
 #define MAX_ALIAS_SEQUENCE_LENGTH 4
 
 enum {
@@ -201,7 +201,28 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
 };
 
-static TSSymbol ts_alias_sequences[1][MAX_ALIAS_SEQUENCE_LENGTH] = {
+enum {
+  field_name = 1,
+  field_values = 2,
+};
+
+static const char *ts_field_names[] = {
+  [0] = NULL,
+  [field_name] = "name",
+  [field_values] = "values",
+};
+
+static const TSFieldMapSlice ts_field_map_slices[2] = {
+  [1] = {.index = 0, .length = 2},
+};
+
+static const TSFieldMapEntry ts_field_map_entries[] = {
+  [0] =
+    {field_name, 0},
+    {field_values, 2},
+};
+
+static TSSymbol ts_alias_sequences[2][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
 };
 
@@ -963,7 +984,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [52] = {.count = 1, .reusable = true}, REDUCE(sym_atomic_values, 4),
   [54] = {.count = 1, .reusable = true}, REDUCE(sym_aggregate_values, 3),
   [56] = {.count = 1, .reusable = true}, REDUCE(sym_atomic_values, 3),
-  [58] = {.count = 1, .reusable = true}, REDUCE(sym_slot, 4),
+  [58] = {.count = 1, .reusable = true}, REDUCE(sym_slot, 4, .production_id = 1),
   [60] = {.count = 1, .reusable = true}, REDUCE(aux_sym_policyspace_repeat1, 1),
   [62] = {.count = 1, .reusable = true}, SHIFT(19),
   [64] = {.count = 1, .reusable = true}, SHIFT(6),
@@ -1008,6 +1029,9 @@ extern const TSLanguage *tree_sitter_policyspace(void) {
     .public_symbol_map = ts_symbol_map,
     .alias_sequences = (const TSSymbol *)ts_alias_sequences,
     .field_count = FIELD_COUNT,
+    .field_names = ts_field_names,
+    .field_map_slices = (const TSFieldMapSlice *)ts_field_map_slices,
+    .field_map_entries = (const TSFieldMapEntry *)ts_field_map_entries,
     .max_alias_sequence_length = MAX_ALIAS_SEQUENCE_LENGTH,
     .lex_fn = ts_lex,
     .external_token_count = EXTERNAL_TOKEN_COUNT,

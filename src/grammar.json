@@ -12,33 +12,41 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "_identifier"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          }
         },
         {
           "type": "STRING",
           "value": ":"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "atomic_values"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "aggregate_values"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "compound_values"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "todo_value"
-            }
-          ]
+          "type": "FIELD",
+          "name": "values",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "atomic_values"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "aggregate_values"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "compound_values"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "todo_value"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",
