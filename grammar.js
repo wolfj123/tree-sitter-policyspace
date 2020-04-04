@@ -21,7 +21,7 @@ module.exports = grammar({
       policyspace: $ => repeat($.slot),
 
       slot: $ => seq(
-        field('name', $._identifier),
+        field('name', $.identifier),
         ':',
         field('values', choice(
           $.atomic_values,
@@ -34,48 +34,43 @@ module.exports = grammar({
       atomic_values: $ => seq(
         'one',
         'of',
-        $._identifier,
+        $.identifier,
         repeat(seq(
           ',',
-          $._identifier
+          $.identifier
         ))
       ),
 
       aggregate_values: $ => seq(
         'some',
         'of',
-        $._identifier,
+        $.identifier,
         repeat(seq(
           ',',
-          $._identifier
+          $.identifier
         ))
       ),
 
       compound_values: $ => seq(
         'consists',
         'of',
-        $.identifier_simple,
+        $.identifier_value,
         repeat(seq(
           ',',
-          $.identifier_simple
+          $.identifier_value
         ))
       ),
 
       todo_value: $ => 'TODO',
 
-      _identifier: $ => choice(
-        $.identifier_simple,
-        $.identifier_with_desc
+      identifier: $ => seq(
+        $.identifier_value,
+        optional($.description)
       ),
 
-      identifier_simple: $ => {
+      identifier_value: $ => {
         return token(seq(alpha, repeat(alpha_numeric)))
       },
-
-      identifier_with_desc: $ => seq(
-        $.identifier_simple,
-        $.description
-      ),
 
       //https://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment
       comment: $ => prec(PREC.COMMENT, choice(

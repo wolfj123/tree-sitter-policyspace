@@ -12,9 +12,9 @@ b : one of c <* *> .
 (policyspace 
 	(comment) 
 	(slot 
-		(identifier_simple) 
+		(identifier (identifier_value)) 
 		(atomic_values 
-			(identifier_simple)) 
+			(identifier (identifier_value))) 
 		(comment)))
 
     
@@ -33,9 +33,9 @@ b : one of c <*
 (policyspace 
 	(comment) 
 	(slot 
-		(identifier_simple) 
+		(identifier (identifier_value)) 
 		(atomic_values 
-			(identifier_simple)) 
+			(identifier (identifier_value))) 
 		(comment)))
 
 
@@ -46,12 +46,4 @@ aggregate slot with descriptions bug1
 myslot[descriptions1] : some of somethingElse [else thingy].
 
 ---
-(policyspace 
-	(slot 
-		(identifier_with_desc 
-			(identifier_simple) 
-			(description)) 
-		(aggregate_values 
-			(identifier_with_desc 
-				(identifier_simple) 
-				(description)))))
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)))))

@@ -7,7 +7,7 @@ myslot : TODO.
 ---
 (policyspace
     (slot
-        (identifier_simple)
+        (identifier (identifier_value))
         (todo_value)))
 
 
@@ -23,7 +23,7 @@ myslot : TODO. <-- this is a comment
 ---
 (policyspace 
     (slot 
-        (identifier_simple)
+        (identifier (identifier_value))
         (todo_value)) 
         (comment))
 
@@ -44,7 +44,7 @@ myslot : TODO. <-- this is comment 2
 ---
 (policyspace (comment)
     (slot 
-        (identifier_simple)
+        (identifier (identifier_value))
         (todo_value)) 
         (comment) (comment))
 
@@ -67,7 +67,7 @@ myslot : TODO.  <* this is a
 ---
 (policyspace 
     (slot 
-        (identifier_simple)
+        (identifier (identifier_value))
         (todo_value)) 
         (comment)
         (comment))
@@ -82,17 +82,11 @@ myslot [myslot] : TODO.
 
 
 ---
-(policyspace
-    (slot
-        (identifier_with_desc 
-            (identifier_simple) 
-            (description))
-        (todo_value)))
+(policyspace (slot (identifier (identifier_value) (description)) (todo_value)))
 
 
 
-        
-
+    
 ====================================
 basic TODO slot with multi line description
 ====================================
@@ -102,10 +96,5 @@ line 2] : TODO.
 
 
 ---
-(policyspace
-    (slot
-        (identifier_with_desc 
-            (identifier_simple) 
-            (description))
-        (todo_value)))
+(policyspace (slot (identifier (identifier_value) (description)) (todo_value)))
 

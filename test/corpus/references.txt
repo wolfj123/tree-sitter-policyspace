@@ -5,7 +5,7 @@ atomic reference 1
 Storage: one of clear, serverEncrypt, clientEncrypt, doubleEncrypt.
 
 ---
-(policyspace (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple) (identifier_simple) (identifier_simple))))
+(policyspace (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)) (identifier (identifier_value)) (identifier (identifier_value)))))
 
 ====================================
 atomic reference 2
@@ -18,8 +18,7 @@ StorageWithDescription [The way data are stored on the server.]: one of
   doubleEncrypt [Encryption on the client, and then on the server. Both passwords are required in order to make use of the data].
 
 ---
-(policyspace (slot (identifier_with_desc (identifier_simple) (description)) (atomic_values (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)))))
-
+(policyspace (slot (identifier (identifier_value) (description)) (atomic_values (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))
 
 ====================================
 atomic reference 3
@@ -31,7 +30,7 @@ DataSubject_EndangeredSpecies: one of yes, no.
 DataSubject_RareMinerals: one of yes, no.
 
 ---
-(policyspace (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple))) (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple))) (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple))) (slot (identifier_simple) (atomic_values (identifier_simple) (identifier_simple))))
+(policyspace (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)))) (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)))) (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)))) (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)))))
 
 ====================================
 aggregate reference
@@ -46,8 +45,7 @@ ProtectedDataSubjectsWithDescription [The type of entities that could be harmed 
   rareMinerals [Disclosing location of rare minerals might lead to illegal mining].
 
 ---
-(policyspace (slot (identifier_simple) (aggregate_values (identifier_simple) (identifier_simple) (identifier_simple) (identifier_simple))) (slot (identifier_with_desc (identifier_simple) (description)) (aggregate_values (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)) (identifier_with_desc (identifier_simple) (description)))))
-
+(policyspace (slot (identifier (identifier_value)) (aggregate_values (identifier (identifier_value)) (identifier (identifier_value)) (identifier (identifier_value)) (identifier (identifier_value)))) (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))
 
 ====================================
 compound reference
@@ -58,7 +56,7 @@ Handling: consists of Storage, Transit, Authentication.
 HandlingWithDescription [Practical aspects of the developed dataset policy]: consists of Storage, Transit, Authentication.
 
 ---
-(policyspace (slot (identifier_simple) (compound_values (identifier_simple) (identifier_simple) (identifier_simple))) (slot (identifier_with_desc (identifier_simple) (description)) (compound_values (identifier_simple) (identifier_simple) (identifier_simple))))
+(policyspace (slot (identifier (identifier_value)) (compound_values (identifier_value) (identifier_value) (identifier_value))) (slot (identifier (identifier_value) (description)) (compound_values (identifier_value) (identifier_value) (identifier_value))))
 
 ====================================
 aggregate todo
@@ -69,4 +67,4 @@ IntellecualProperty: TODO.
 IntellecualPropertyWithDescription [IP issues involving described dataset]: TODO.
 
 ---
-(policyspace (slot (identifier_simple) (todo_value)) (slot (identifier_with_desc (identifier_simple) (description)) (todo_value)))
+(policyspace (slot (identifier (identifier_value)) (todo_value)) (slot (identifier (identifier_value) (description)) (todo_value)))

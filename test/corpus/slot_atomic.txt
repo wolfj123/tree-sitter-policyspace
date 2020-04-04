@@ -7,9 +7,9 @@ myslot : one of something .
 ---
 (policyspace
     (slot
-        (identifier_simple)
+        (identifier (identifier_value))
         (atomic_values 
-            (identifier_simple))))
+            (identifier (identifier_value)))))
 
 
 
@@ -21,14 +21,7 @@ basic atomic slot with descriptions
 myslot[descriptions1] : one of something [description2].
 
 ---
-(policyspace
-    (slot
-        (identifier_with_desc 
-            (identifier_simple) (description))
-        (atomic_values 
-            (identifier_with_desc 
-                (identifier_simple) (description)))))
-
+(policyspace (slot (identifier (identifier_value) (description)) (atomic_values (identifier (identifier_value) (description)))))
 
 
 ====================================
@@ -38,19 +31,7 @@ atomic slot with descriptions
 myslot[descriptions1] : one of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(policyspace
-    (slot
-        (identifier_with_desc 
-            (identifier_simple) (description))
-        (atomic_values 
-            (identifier_with_desc 
-                (identifier_simple) (description))
-            (identifier_with_desc 
-                (identifier_simple) (description))
-            (identifier_with_desc 
-                (identifier_simple) (description)))))
-
-
+(policyspace (slot (identifier (identifier_value) (description)) (atomic_values (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))
 
 
 ===========================================
@@ -61,15 +42,4 @@ myslot[descriptions1] : one of something [descrip
             tion2], <* a wild [comment] appears!*> somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(policyspace
-    (slot
-        (identifier_with_desc 
-            (identifier_simple) (description))
-        (atomic_values 
-            (identifier_with_desc 
-                (identifier_simple) (description))
-            (comment)
-            (identifier_with_desc 
-                (identifier_simple) (description))
-            (identifier_with_desc 
-                (identifier_simple) (description)))))
+(policyspace (slot (identifier (identifier_value) (description)) (atomic_values (identifier (identifier_value) (description)) (comment) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))

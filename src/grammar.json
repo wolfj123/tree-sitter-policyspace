@@ -16,7 +16,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_identifier"
+            "name": "identifier"
           }
         },
         {
@@ -67,7 +67,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_identifier"
+          "name": "identifier"
         },
         {
           "type": "REPEAT",
@@ -80,7 +80,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_identifier"
+                "name": "identifier"
               }
             ]
           }
@@ -100,7 +100,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_identifier"
+          "name": "identifier"
         },
         {
           "type": "REPEAT",
@@ -113,7 +113,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_identifier"
+                "name": "identifier"
               }
             ]
           }
@@ -133,7 +133,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier_simple"
+          "name": "identifier_value"
         },
         {
           "type": "REPEAT",
@@ -146,7 +146,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "identifier_simple"
+                "name": "identifier_value"
               }
             ]
           }
@@ -157,20 +157,28 @@
       "type": "STRING",
       "value": "TODO"
     },
-    "_identifier": {
-      "type": "CHOICE",
+    "identifier": {
+      "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier_simple"
+          "name": "identifier_value"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier_with_desc"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
-    "identifier_simple": {
+    "identifier_value": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -188,19 +196,6 @@
           }
         ]
       }
-    },
-    "identifier_with_desc": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier_simple"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "description"
-        }
-      ]
     },
     "comment": {
       "type": "PREC",

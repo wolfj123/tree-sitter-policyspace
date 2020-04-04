@@ -23,11 +23,15 @@ POLICY SPACE BNF
 									
 <description> 			::= "[" (<free_text> | <newline>)* "]"
 
-<identifier>			::= <identifier_simple> | <identifier_with_desc>
+<identifier>			::= <identifier_value> | (<identifier_value> <description>)
 
-<identifier_with_desc> 	::= <identifier_simple> <description>
+<identifier_value> 		::= <letter> (<letter> | <digit>)*
 
-<identifier_simple> 	::= <letter> (<letter> | <digit>)*
+#<identifier>			::= <identifier_simple> | <identifier_with_desc>
+
+#<identifier_with_desc> 	::= <identifier_simple> <description>
+
+#<identifier_simple> 	::= <letter> (<letter> | <digit>)*
 	
 <free_text>				::=  (<letter> | <digit> | ".,/~?!()@:#$%^&*_+-)+\"\'"
 
