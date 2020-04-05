@@ -10,13 +10,13 @@ POLICY SPACE BNF
 									<todo_value>) "."
 
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/atomic-slot.html
-<atomic_values> 		::= "one" "of" <identifier> ("," (<identifier>)*
+<atomic_values> 		::= "one" "of" <slot_value> [<description>] ("," (<slot_value> [<description>])*
 
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/aggregate-slot.html
-<aggregate_values> 		::= "some" "of" <identifier> ("," (<identifier>)*
+<aggregate_values> 		::= "some" "of" <slot_value> [<description>] ("," (<slot_value> [<description>])*
 
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/compound-slot.html
-<compound_values> 		::= "consists" "of" <identifier_simple> ("," <identifier_simple>)*
+<compound_values> 		::= "consists" "of" <identifier_value> ("," <identifier_value>)*
 
 #https://datatagginglibrary.readthedocs.io/en/latest/tag-spaces/todo-slot.html
 <todo_value>			::= "TODO"
@@ -24,6 +24,8 @@ POLICY SPACE BNF
 <description> 			::= "[" (<free_text> | <newline>)* "]"
 
 <identifier>			::= <identifier_value> | (<identifier_value> <description>)
+
+<slot_value>			::= <identifier_value>
 
 <identifier_value> 		::= <letter> (<letter> | <digit>)*
 

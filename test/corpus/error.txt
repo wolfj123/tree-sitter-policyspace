@@ -14,7 +14,7 @@ missing value
 myslot : one of .
 
 ---
-(policyspace (slot (identifier (identifier_value)) (atomic_values (identifier (MISSING identifier_value)))))
+(policyspace (slot (identifier (identifier_value)) (atomic_values (slot_value (MISSING identifier_value)))))
 
 ==================
 missing dot
@@ -23,7 +23,7 @@ missing dot
 myslot : one of those
 
 ---
-(policyspace (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value))) (MISSING ".")))
+(policyspace (slot (identifier (identifier_value)) (atomic_values (slot_value (identifier_value))) (MISSING ".")))
 
 
 ====================================
@@ -33,6 +33,4 @@ missing comma
 myslot[descriptions1] : some of something somethingElse.
 
 ---
-(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value))) (ERROR (UNEXPECTED 't'))))
-
-
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (slot_value (identifier_value))) (ERROR (UNEXPECTED 't'))))

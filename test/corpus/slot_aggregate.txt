@@ -5,12 +5,7 @@ basic aggregate slot
 myslot : some of something .
 
 ---
-(policyspace
-    (slot
-        (identifier (identifier_value))
-        (aggregate_values 
-            (identifier (identifier_value)))))
-
+(policyspace (slot (identifier (identifier_value)) (aggregate_values (slot_value (identifier_value)))))
 
 
 
@@ -21,7 +16,7 @@ basic aggregate slot with descriptions
 myslot[descriptions1] : some of something [description2].
 
 ---
-(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)))))
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (slot_value (identifier_value)) (description))))
 
 
 ====================================
@@ -31,8 +26,7 @@ aggregate slot with descriptions
 myslot[descriptions1] : some of something [description2], somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))
-
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (slot_value (identifier_value)) (description) (slot_value (identifier_value)) (description) (slot_value (identifier_value)) (description))))
 
 ===========================================
 aggregate slot with descriptions and comment
@@ -42,4 +36,4 @@ myslot[descriptions1] : some of something [descrip
             tion2], <* a wild [comment] appears!*> somethingElse [else thingy!], evenMoreSomething [much else?].
 
 ---
-(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)) (comment) (identifier (identifier_value) (description)) (identifier (identifier_value) (description)))))
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (slot_value (identifier_value)) (description) (comment) (slot_value (identifier_value)) (description) (slot_value (identifier_value)) (description))))

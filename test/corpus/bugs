@@ -8,14 +8,7 @@ multiline comment bug1
 b : one of c <* *> . 
 
 ---
-
-(policyspace 
-	(comment) 
-	(slot 
-		(identifier (identifier_value)) 
-		(atomic_values 
-			(identifier (identifier_value))) 
-		(comment)))
+(policyspace (comment) (slot (identifier (identifier_value)) (atomic_values (slot_value (identifier_value))) (comment)))
 
     
 ==================
@@ -30,14 +23,7 @@ b : one of c <*
 
 ---
 
-(policyspace 
-	(comment) 
-	(slot 
-		(identifier (identifier_value)) 
-		(atomic_values 
-			(identifier (identifier_value))) 
-		(comment)))
-
+(policyspace (comment) (slot (identifier (identifier_value)) (atomic_values (slot_value (identifier_value))) (comment)))
 
 ====================================
 aggregate slot with descriptions bug1
@@ -46,4 +32,4 @@ aggregate slot with descriptions bug1
 myslot[descriptions1] : some of somethingElse [else thingy].
 
 ---
-(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (identifier (identifier_value) (description)))))
+(policyspace (slot (identifier (identifier_value) (description)) (aggregate_values (slot_value (identifier_value)) (description))))

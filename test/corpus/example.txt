@@ -5,7 +5,7 @@ example
 myslot : one of value1, value2 .
 
 ---
-(policyspace (slot (identifier (identifier_value)) (atomic_values (identifier (identifier_value)) (identifier (identifier_value)))))
+(policyspace (slot (identifier (identifier_value)) (atomic_values (slot_value (identifier_value)) (slot_value (identifier_value)))))
 
 ==================
 playground

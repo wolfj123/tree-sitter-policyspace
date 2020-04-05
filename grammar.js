@@ -34,20 +34,24 @@ module.exports = grammar({
       atomic_values: $ => seq(
         'one',
         'of',
-        $.identifier,
+        $.slot_value,
+        optional($.description),
         repeat(seq(
           ',',
-          $.identifier
+          $.slot_value,
+          optional($.description),
         ))
       ),
 
       aggregate_values: $ => seq(
         'some',
         'of',
-        $.identifier,
+        $.slot_value,
+        optional($.description),
         repeat(seq(
           ',',
-          $.identifier
+          $.slot_value,
+          optional($.description),
         ))
       ),
 
@@ -67,6 +71,9 @@ module.exports = grammar({
         $.identifier_value,
         optional($.description)
       ),
+
+      slot_value: $ => 
+        $.identifier_value,
 
       identifier_value: $ => {
         return token(seq(alpha, repeat(alpha_numeric)))

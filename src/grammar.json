@@ -67,7 +67,19 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "slot_value"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -80,7 +92,19 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "identifier"
+                "name": "slot_value"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "description"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               }
             ]
           }
@@ -100,7 +124,19 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "slot_value"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -113,7 +149,19 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "identifier"
+                "name": "slot_value"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "description"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               }
             ]
           }
@@ -177,6 +225,10 @@
           ]
         }
       ]
+    },
+    "slot_value": {
+      "type": "SYMBOL",
+      "name": "identifier_value"
     },
     "identifier_value": {
       "type": "TOKEN",
